@@ -66,35 +66,35 @@ PrintUsage(const char *progName) {
 int
 main(int argc, char **argv) {
 
-  int ndecks = 2;  // number of cards to draw
-  long seed = 1;
-  
-  if (argc==3) {
-    seed = atoi(argv[1]); // the first argument is the seed
-    ndecks = atoi(argv[2]); // the second argument is the number of decks
-  } else if (argc==2) {
-    if (argv[1][1]=='h') {    // check the first argument is "-h"
-      PrintUsage(argv[0]);
-      exit(-1);
-    } else {
-      seed = atoi(argv[1]); // the first argument is the seed
+    int ndecks = 2;  // number of cards to draw
+    long seed = 1;
+
+    if (argc==3) {
+        seed = atoi(argv[1]); // the first argument is the seed
+        ndecks = atoi(argv[2]); // the second argument is the number of decks
+    } else if (argc==2) {
+        if (argv[1][1]=='h') {    // check the first argument is "-h"
+            PrintUsage(argv[0]);
+            exit(-1);
+        } else {
+            seed = atoi(argv[1]); // the first argument is the seed
+        }
+    } else if (argc>3) {
+        PrintUsage(argv[0]);
+        exit(-1);
     }
-  } else if (argc>3) {
-    PrintUsage(argv[0]);
-    exit(-1);
-  }
-  srand(seed);
+    srand(seed);
 
-	// create an instance of player and dealer
-	BJackPlayer bjplayer("Player");
-	BJackDealer bjdealer(ndecks);
+    // create an instance of player and dealer
+    BJackPlayer bjplayer("Player");
+    BJackDealer bjdealer(ndecks);
 
-	// create an instance of the bj game with the given player an dealer
-	BJackGame bjgame(bjplayer, bjdealer);
+    // create an instance of the bj game with the given player an dealer
+    BJackGame bjgame(bjplayer, bjdealer);
 
-	// play the game until the user quit
-	while( bjgame.oneRun() );
+    // play the game until the user quit
+    while( bjgame.oneRun() );
 
-	PrintMyID("11X7030XX");
-	return 0;
+    PrintMyID("113703052");
+    return 0;
 }

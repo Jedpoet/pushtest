@@ -76,6 +76,8 @@ private:
     
     // TODO: more data and functions to add here ...
 
+    bool need_restart;
+
 };
 
 #endif

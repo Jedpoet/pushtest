@@ -23,6 +23,8 @@
 #ifndef _CARD_H
 #define _CARD_H
 
+#include "AnsiPrint.h"
+
 // a few card related constants
 const int kNPip=13;
 const int kNSuit=4;

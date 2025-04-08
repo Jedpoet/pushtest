@@ -66,6 +66,10 @@ public:
      * It should check if the user has a valid hand first.
      */
     void showCards() const;
+
+    int getCredits(void);
+
+    void addCredits(int a);
     
 private:
     
@@ -75,6 +79,7 @@ private:
     int nCards; // current number of cards at hand
     Card cards[kMaxCards]; // the current hand
     int showAll; // a flag indicating the first card is facing up or down  
+    int credits;
     
     char *name;
     
